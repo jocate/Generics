@@ -18,12 +18,6 @@ struct CountedSet<Element> : ExpressibleByArrayLiteral where Element : Hashable 
        
     }
     
-    func printOut() {
-        print(elementDict)
-        print(CountedSet<Element>.self)
-    }
-  
-   
     // Insert
     
     mutating func insert(type: Element) {
@@ -55,15 +49,10 @@ struct CountedSet<Element> : ExpressibleByArrayLiteral where Element : Hashable 
         }
     }
     
-    // Subscripting
-    /*mutating func subscript(_ member: Element) -> Int {
-        
-    }*/
 }
 
 enum Arrow { case iron, wooden, elven, dwarvish, magic, silver }
 var aCountedSet = CountedSet<Arrow>()
-aCountedSet.printOut()
 aCountedSet[.iron] // 0
 var myCountedSet: CountedSet<Arrow> = [.iron, .magic, .iron, .silver, .iron, .iron]
 myCountedSet[.iron] // 4
